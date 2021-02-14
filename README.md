@@ -26,7 +26,7 @@ x1 Bankers Box (STOR/FILE | 799)
 
 X1 USB Power Bank
 
-x6 Cables (4 for the sensors, lights, switches, 2 for the power bank and the arduino)
+x4 Cables (1 for the sensor, 2 lights, 1 switch)
 
 See the "setupimgs" for setup pics!
 
