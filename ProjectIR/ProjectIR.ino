@@ -1,11 +1,11 @@
 /*
-ProjectIR
+  ProjectIR
 
-This is ProjectIR, Its a IR light logger, Use it for Weather, Science or just for fun!
-Made by Owen Hurst
-All code here is tested.
+  This is ProjectIR, Its a IR light logger, Use it for Weather, Science or just for fun!
+  Made by Owen Hurst
+  All code here is tested.
 
-The 2021 IR Project
+  The 2021 IR Project
 */
 
 const int ledPin = 13;
@@ -13,8 +13,6 @@ const int ledPin = 13;
 const int irPin = A0;
 
 #include <EEPROM.h>
-
-#include <LowPower.h>
 
 int addr = 0;
 
@@ -24,7 +22,7 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
 
-  Serial.println("ProjectIR V1.2");
+  Serial.println("ProjectIR V1.3");
 
   Serial.println("Firmware V1.0");
 
@@ -34,16 +32,16 @@ void setup() {
 
   digitalWrite(ledPin, HIGH);
 
-  delay(30000); 
+  delay(30000);
 
   digitalWrite(ledPin, LOW);
 
   Serial.println("Erasing EEPROM");
 
   for (int i = 0 ; i < EEPROM.length() ; i++) {
-    
+
     EEPROM.write(i, 0);
-    
+
   }
 
   Serial.println("Erase Done");
@@ -64,7 +62,11 @@ void loop() {
 
   Serial.println(irStatus);
 
-  int val = irStatus;
+  int input = irStatus;
+  int constrainedInput = constrain(input, 50, 200);
+
+
+  int val = constrainedInput;
 
   EEPROM.update(addr, val);
 
@@ -78,17 +80,13 @@ void loop() {
 
   Serial.println("Data Saved!");
 
-  Serial.println("Logging Stop");
-
-  digitalWrite(ledPin, HIGH); 
+  digitalWrite(ledPin, HIGH);
 
   delay(100);
 
   digitalWrite(ledPin, LOW);
 
   delay(60000);
-
-  Serial.println("Logging Start");
 
 }
 
