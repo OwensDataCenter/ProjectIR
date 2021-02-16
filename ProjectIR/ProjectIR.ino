@@ -10,6 +10,8 @@
 
 const int ledPin = 13;
 
+const int tonePin = 11;
+
 const int irPin = A0;
 
 #include <EEPROM.h>
@@ -22,7 +24,7 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
 
-  Serial.println("ProjectIR V1.3");
+  Serial.println("ProjectIR V1.4");
 
   Serial.println("Firmware V1.0");
 
@@ -35,6 +37,8 @@ void setup() {
   delay(30000);
 
   digitalWrite(ledPin, LOW);
+
+  tone(tonePin, 440, 500);
 
   Serial.println("Erasing EEPROM");
 
@@ -82,6 +86,9 @@ void loop() {
 
   digitalWrite(ledPin, HIGH);
 
+
+
+200
   delay(100);
 
   digitalWrite(ledPin, LOW);
