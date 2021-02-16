@@ -4,8 +4,6 @@ This is Project IR, The Original ProjectIR!
 
 This code is compiled and tested.
 
-Your version is V1.0.
-
 This stores IR Data in the EEPROM, You have 30 secs until all data is erased and then written.
 
 Also, it captures the IR data every 60 secs.
@@ -27,6 +25,8 @@ x1 Bankers Box (STOR/FILE | 799)
 X1 USB Power Bank
 
 x4 Cables (1 for the sensor, 2 lights, 1 switch)
+
+x1 Speaker 8Ω or lower (or pizeo)
 
 See the "setupimgs" for setup pics!
 
