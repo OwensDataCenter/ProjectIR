@@ -32,4 +32,4 @@ See the "setupimgs" for setup pics!
 
 Thank you for downloading!
 
-Release Date: 2/13/2021
+ProjectIR Has Nightly Updates!
