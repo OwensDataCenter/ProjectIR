@@ -1,5 +1,7 @@
 # ProjectIR
 
+Abandoned Temporarily
+
 This is Project IR, The Original ProjectIR!
 
 This code is compiled and tested.
