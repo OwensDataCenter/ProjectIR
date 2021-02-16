@@ -10,8 +10,6 @@
 
 const int ledPin = 13;
 
-const int tonePin = 11;
-
 const int irPin = A0;
 
 #include <EEPROM.h>
@@ -24,7 +22,7 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
 
-  Serial.println("ProjectIR V1.5");
+  Serial.println("ProjectIR V1.6");
 
   Serial.println("Firmware V1.0");
 
@@ -40,56 +38,7 @@ void setup() {
 
   analogRead(irPin);
 
-  tone(tonePin, 440, 500);
-
   Serial.println("Self Check");
-
-  if (irPin < 50)
-
-  {
-    tone(tonePin, 300, 500);
-
-    tone(tonePin, 100, 500);
-
-    Serial.println("Sensor is Bad, Or defective Or is not detected! (Error: Sensor Pin Below 50)");
-
-    Serial.println("Error Code: 1");
-
-    digitalWrite(ledPin, HIGH);
-
-    delay(500);
-
-    digitalWrite(ledPin, LOW);
-
-  }
-
-  if (irPin > 200)
-
-  {
-
-    tone(tonePin, 300, 500);
-
-    tone(tonePin, 100, 500);
-
-    Serial.println("Sensor is Bad, Or defective Or is not detected! (Error: Sensor Pin Above 200)");
-
-    Serial.println("Error Code: 2");
-
-    digitalWrite(ledPin, HIGH);
-
-    delay(500);
-
-    digitalWrite(ledPin, LOW);
-
-    delay(500);
-
-    digitalWrite(ledPin, HIGH);
-
-    delay(500);
-
-    digitalWrite(ledPin, LOW);
-
-  }
 
   Serial.println("Erasing EEPROM");
 
