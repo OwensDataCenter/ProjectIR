@@ -24,7 +24,7 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
 
-  Serial.println("ProjectIR V1.4");
+  Serial.println("ProjectIR V1.5");
 
   Serial.println("Firmware V1.0");
 
@@ -38,7 +38,58 @@ void setup() {
 
   digitalWrite(ledPin, LOW);
 
+  analogRead(irPin);
+
   tone(tonePin, 440, 500);
+
+  Serial.println("Self Check");
+
+  if (irPin < 50)
+
+  {
+    tone(tonePin, 300, 500);
+
+    tone(tonePin, 100, 500);
+
+    Serial.println("Sensor is Bad, Or defective Or is not detected! (Error: Sensor Pin Below 50)");
+
+    Serial.println("Error Code: 1");
+
+    digitalWrite(ledPin, HIGH);
+
+    delay(500);
+
+    digitalWrite(ledPin, LOW);
+
+  }
+
+  if (irPin > 200)
+
+  {
+
+    tone(tonePin, 300, 500);
+
+    tone(tonePin, 100, 500);
+
+    Serial.println("Sensor is Bad, Or defective Or is not detected! (Error: Sensor Pin Above 200)");
+
+    Serial.println("Error Code: 2");
+
+    digitalWrite(ledPin, HIGH);
+
+    delay(500);
+
+    digitalWrite(ledPin, LOW);
+
+    delay(500);
+
+    digitalWrite(ledPin, HIGH);
+
+    delay(500);
+
+    digitalWrite(ledPin, LOW);
+
+  }
 
   Serial.println("Erasing EEPROM");
 
@@ -67,8 +118,8 @@ void loop() {
   Serial.println(irStatus);
 
   int input = irStatus;
-  int constrainedInput = constrain(input, 50, 200);
 
+  int constrainedInput = constrain(input, 50, 200);
 
   int val = constrainedInput;
 
