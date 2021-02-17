@@ -10,6 +10,8 @@
 
 const int ledPin = 13;
 
+const int tonePin = 11;
+
 const int irPin = A0;
 
 #include <EEPROM.h>
@@ -38,7 +40,7 @@ void setup() {
 
   analogRead(irPin);
 
-  Serial.println("Self Check");
+  tone(tonePin, 440, 500);
 
   Serial.println("Erasing EEPROM");
 
