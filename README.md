@@ -26,6 +26,6 @@ See the "setupimgs" for setup pics!
 
 Thank you for downloading!
 
-ProjectIR Has Nightly Updates!
+The Projeck can now be on the go!
 
-(Now Updated to Mobile Version!)
+(This is the final version of ProjectIR)
